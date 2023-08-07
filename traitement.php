@@ -17,7 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $texteOriginal = $_POST["texte"];
         $texteTraite = removeSpecialChars($texteOriginal);
 
-       echo "Texte original : " .htmlentities( $_POST["texte"]);
+        /*************************************************************************************************************
+         * il faut echapper les caractere speciaux sinon ils seront interpreté par le navigateur d'ou l'utilisation
+         * de htmlentities
+         * ************************************************************************************************************
+         */
+       echo "Texte original : " .htmlentities($texteOriginal);
        echo "Texte traité : " . $texteTraite;
     }
 }
