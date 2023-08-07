@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $texteOriginal = $_POST["texte"];
         $texteTraite = removeSpecialChars($texteOriginal);
 
-        print("Texte original : " . $texteOriginal ."\n");
-        print("Texte traité : " . $texteTraite );
+       echo "Texte original : " .htmlentities( $_POST["texte"]);
+       echo "Texte traité : " . $texteTraite;
     }
 }
 ?>
